@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        /* Quote Section Styling */
+        .quote-section {
+            background: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .quote {
+            font-size: 1.5em;
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* Section Styling */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        h2 {
+            color: #444;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px 0;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Daily Quote Section -->
+    <div class="quote-section">
+        <p class="quote">"The only way to do great work is to love what you do." – Steve Jobs</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Daily Dashboard</h1>
+
+        <!-- GSD Section -->
+        <div class="section">
+            <h2>GSD (Get Stuff Done)</h2>
+            <ul>
+                <li>Complete project proposal</li>
+                <li>Respond to emails</li>
+                <li>Schedule team meeting</li>
+            </ul>
+        </div>
+
+        <!-- Workout Section -->
+        <div class="section">
+            <h2>Workout</h2>
+            <ul>
+                <li>30-minute run</li>
+                <li>Strength training: Push-ups, Squats</li>
+                <li>10-minute yoga stretch</li>
+            </ul>
+        </div>
+
+        <!-- History Section -->
+        <div class="section">
+            <h2>History</h2>
+            <ul>
+                <li>Read about the Industrial Revolution</li>
+                <li>Watch documentary on WWII</li>
+                <li>Review notes on Ancient Rome</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Array of quotes to rotate daily
+        const quotes = [
+            '"The only way to do great work is to love what you do." – Steve Jobs',
+            '"Success is not final, failure is not fatal." – Winston Churchill',
+            '"Do something today that your future self will thank you for." – Unknown',
+            '"The journey of a thousand miles begins with one step." – Lao Tzu'
+        ];
+
+        // Function to get a quote based on the day
+        function getDailyQuote() {
+            const today = new Date().getDay();
+            const quoteElement = document.querySelector('.quote');
+            quoteElement.textContent = quotes[today % quotes.length];
+        }
+
+        // Call the function to set the quote
+        getDailyQuote();
+    </script>
+</body>
+</html>
